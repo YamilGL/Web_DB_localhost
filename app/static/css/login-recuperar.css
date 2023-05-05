@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/**/
+}
+body{
+    background-color: rgb(221, 221, 221);/*Fondo Iniciar sesión*/
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;/**/
+    margin: 0 auto;
+}
+.container{ /* Caja contenedora */
+    background-color: #fff;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 100%;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 14px 28px rgb(0, 0, 0, .25),
+                0px 14px 10px rgb(0, 0, 0, .22);
+}
+.form-container{ /*Division de contenido 1 */
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    
+}
+.recuperar-contraseña-container{ /*Division de contenido 2 */
+    left: 0;
+    width: 100%;
+    
+    
+}
+ form{
+    background-color: #FFFFFF;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+h1{
+    font-weight: bold;
+    
+    margin: 0;
+}
+label{
+    font-size: 12px;
+}
+span{
+    font-size: 12px;
+    margin: 15px 0;
+}
+input{
+    background-color: #eee;
+    border: none;
+    text-decoration: none;
+    width: 80%;
+    margin: 8px 0;
+    padding: 12px 15px;
+}
+button{
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 10px;
+    
+}
