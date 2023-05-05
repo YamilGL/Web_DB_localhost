@@ -60,3 +60,7 @@ Ir a la ruta que aparece en la terminal
 **SALIR DEL ENTORNO VIRTUAL**
 Ejecute:
 `$ deactivate`
+
+
+para el login como administrador reconoce: admin@gmail.com      pass:admin
+el resto de usuarios solo podran acceder a la vista de compras, mientras que el administrador maneja la base de datos
