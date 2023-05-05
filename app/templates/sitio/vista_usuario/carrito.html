@@ -1,0 +1,222 @@
+{% include 'sitio/vista_usuario/cabecera.html'%}  
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Realizar compra</title>
+    <link rel="stylesheet" href="../../static/css/carrito.css">
+    <script src="../../static/js/carrito.js"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">REALIZAR COMPRA</div>
+    </div>
+    <main class="centromain">
+    <div class="tabs">
+        <div class="tab-container">
+
+            <div id="tab1" class="tab">
+                <a href="#tab1" class="colortablero">Carro de compras</a>
+                <div class="tab-content">
+                    <section>
+                        <table class='table'>
+                            <tr>
+                                <th class="texto">Tus productos</th>
+                                <th class="texto">Precio</th>
+                                <th class="texto">Cantidad</th>
+                                <th class="texto">Action</th>
+                            </tr>
+                            {%for recepcion in recepcion%}
+                            <tr>
+                                <td class="texto">
+                                    <img width = "60" src="/img/{{ recepcion[5] }}" class="img-fluid rounded-top" alt=""></br>
+                                    {{ recepcion[1] }}</br>
+                                    {{ recepcion[2] }}</br>
+                                    Color: {{ recepcion[3] }}</br>
+                                </td>
+                                <td class="texto">${{ recepcion[4] }}</td>
+                                <td class="texto">1</td>
+                                <th>
+                                    <form style = "display:inlie-block; width: 100px; height:100px;text-align: center;" action="/carrito/eliminar" method="post">
+                                        <input  type ="hidden" value ="{{ recepcion[0] }}" type="text" name="txtID" id="txtID">
+                                        <button style ="background-color: #f44336; color: white; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer;" type="submit">Eliminar</button>
+                                    </form>
+                                </th>
+                                
+                            </tr>
+                            {%endfor%}
+                        </table>
+                    </section>
+                    </br>
+
+                    <section class="total">
+                        <p class='texto' id="subtotal">Subtotal: $30.00</p>
+                    </section>
+
+                    <div class="texto">
+                        <button onclick="continuar()">Continuar</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="tab2" class="tab">
+                <a href="#tab2" class="colortablero">Envío</a>
+                <div class="tab-content">
+                    <form action="forms" method="post">
+                        <p>
+                            <center><b>Ingrese sus datos personales</b></center>
+                        </p></br>
+                        <fieldset class="izquierda">
+                            <br />
+                            <p>Nombres:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            <br />
+
+                            <p>Apellidos:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            <br />
+
+                            <p>DNI:</p>
+                            <input type="field" class="field" size="35" required> <br />
+                            <br />
+
+                            <p>Telefono:</p>
+                            <input type="tel" class="field" size="35" required> <br />
+                            <br />
+                        </fieldset>
+                        <fieldset class="derecha">
+                            <br />
+                            <p>Pais:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            <br />
+
+                            <p>Departamento:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            <br />
+
+                            <p>Provincia:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            <br />
+
+                            <p>Distrito:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            <br />
+
+                            <p>Direccion:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            <br />
+
+                        </fieldset>
+                        </br>
+                        <p class="center-content">
+                            <button onclick="enviar()">Enviar aqui</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <div id="tab3" class="tab">
+                <a href="#tab3" class="colortablero">Pago</a>
+                <div class="tab-content">
+                    <div class="grid-pago">
+                        <div class="grid">
+                            <!-- En estas casillas se tienen que imprimir valores ya dados -->
+                            <p>N de pedido</p>
+                            <input class="field" type="text" size="35"> <br />
+                            <br>
+                            <p>Destinatario</p>
+                            <input class="field" type="text" size="35"> <br />
+                            <br>
+                            <p>Direccion</p>
+                            <input class="field" type="text" size="35"> <br />
+                            <br>
+                        </div>
+                    </div>
+                    </br>
+
+                    <div class="grid-pago">
+                        <div class="grid">
+                            <p><b>Detalles del pedido</b></p></br>
+                            <section>
+                                <div class="grid-detalles">
+                                    <!-- Se imprime lo de la tabla -->
+                                    <div class="grid-pedido">PRODUCTO:</br>
+                                        SONY</br>
+                                        Código: 17659331 </br>
+                                        Audífonos inalámbricos con noise cancelling WH-1000XM4 </br>
+                                        Color: Negro</br></div>
+                                    <div class="grid-pedido">PRECIO:</br>
+                                        $80.00
+                                    </div>
+                                    <div class="grid-pedido">CANTIDAD:</br>
+                                        1</div>
+                                    <div class="grid-pedido">SUBTOTAL:</br>
+                                        $80.00</div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="grid-pago">
+                        <div class="grid">
+                            <!-- Se imprime el subtotal de la primera pestana y un valor dado para el evio -->
+                            <p>Subtotal: $30.00</p>
+                            <br>
+                            <p>Envio: $10.20</p>
+
+                            <br>
+                            <p>Total: $40.20</p>
+                            <br>
+                        </div>
+                        </br>
+                    </div>
+                    </br>
+                    <div class="grid-pago">
+                        <div class="grid">
+                            <p><b>Selecciona una forma de pago</b></p></br>
+                            <input type="radio" name="casilla" value="trasferencia">Trasferencia bancaria
+                            <br>
+                            <input type="radio" name="casilla" value="tarjeta">Pago con tarjeta
+                        </div>
+                    </div>
+                    </br>
+                    <form action="forms" method="post">
+                        <p><b>Ingrese los datos de su tarjeta</b></p></br>
+                        <fieldset class="centro">
+                            <p>Tipo:</p>
+                            <input class="field" list="tarjetas" required>
+                            <datalist id="tarjetas">
+                                <option value="Visa">
+                                <option value="MarterCard">
+                                <option value="American Express">
+                            </datalist></br>
+                            </br>
+
+                            <p>Numero de la tarjeta:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            </br>
+
+                            <p>Nombre del titular:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            </br>
+
+                            <p>Fecha de vencimiento:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            </br>
+
+                            <p>CVV:</p>
+                            <input class="field" type="text" size="35" required> <br />
+                            </br>
+                        </fieldset>
+                        <p class="texto">
+                            <button onclick="comprar()">Finalizar compra</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </main>
+{%include 'sitio/pie.html'%}

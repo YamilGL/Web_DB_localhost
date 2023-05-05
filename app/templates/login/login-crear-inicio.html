@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login-crear-inicio.css') }}">
+    <link rel="stylesshet" href="https://use.fontawsome.com/releases/v5.6.3/css/all.css">
+    <include src="cabecera.html"></include>
+    <script src="https://kit.fontawesome.com/fa849703be.js" crossorigin="anonymous"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container crear-cuenta-container">
+            <form action="/login/login-crear-inicio/Save_data" method="post">
+                <h1>Crear cuenta</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <span>Use un email para registrarte</span>
+                <label for="txtName" class="form-label"></label>
+                <input type="text" class="form-control"  name="txtName" id="txtName" placeholder="Name">
+
+                <label for="txtEmail" class="form-label"></label>
+                <input type="email" class="form-control"  name="txtEmail" id="txtEmail" placeholder="Correo electrónico">
+
+                <label for="txtPass" class="form-label"></label>
+                <input type="password" class="form-control"  name="txtPass" id="txtPass" placeholder="Password">
+
+                <button type ="submit">Registrarse</button>
+            </form>
+        </div>
+
+        <div class="form-container iniciar-sesion-container">
+            <form action="/login/login-crear-inicio/check" method = "post">
+                <h1>Iniciar sesión</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <span>Use un email para iniciar sesión</span>
+                <label for="txtUser" class="form-label"></label>
+                <input type="email" class="form-control"  name="txtUser" id="txtUser" placeholder="Correo electrónico">
+                <label for="txtPassword" class="form-label"></label>
+                <input type="password" class ="form-control" name="txtPassword" id="txtPassword" placeholder="Password">
+                <a href="/login/recuperar"><span>¿Olvidaste la contraseña?</span></a>
+                
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+        
+        <div class="other-container">
+            <div class="other">
+                <div class="other-panel other-left">
+                    <h1>Iniciar sesión</h1>
+                    <p>Si ya estas registrado puedes iniciar sesión aquí.</p>
+                    <button class="press" id="iniciar-sesion">Iniciar sesión</button>
+                </div>
+                <div class="other-panel other-right">
+                    <h1>Crear nueva cuenta</h1>
+                    <p>Si aún no tienes cuenta, puedes registrarte aquí.</p>
+                    <button class="press" id="crear-cuenta">Crear nueva cuenta</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        const crearCuentaButton = document.getElementById("crear-cuenta");
+        const iniciarSesionButton  = document.getElementById("iniciar-sesion");
+        const container  = document.getElementById("container");
+
+        crearCuentaButton.addEventListener('click',()=>{
+            container.classList.add("right-panel-active");
+        })
+
+        iniciarSesionButton.addEventListener('click',()=>{
+            container.classList.remove("right-panel-active");
+        })
+
+
+
+    </script>
+</body>
+</html>
