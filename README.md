@@ -44,6 +44,8 @@ esta será nuestra base de datos con el nombre de 'web'
 1.-estando dentro de la direccion http://localhost/phpmyadmin/ crear una nueva base de datos con el nombre de 'web'
 2.- dentro de esta base de datos llamada 'web'(importante que tenga este nombre) hacer click en la parte superior a 'importar'
 3.- seleccion el archivo web.sql e importalo.
+[![example-03.png](https://i.postimg.cc/T2q19jZk/example-03.png)](https://postimg.cc/Lh5m4P4f)
+Deberia quedar de esta manera
 
 **EJECUTAR LA PAGINA WEB**
 IMPORTANTE: Tener activado el entorno virtual 
