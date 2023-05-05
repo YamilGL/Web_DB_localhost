@@ -39,8 +39,11 @@ IMPORTANTE: tener la carpeta app y el archivo requeriments en el mismo sitio en 
 Una vez abierto, activar(presionar start) en Apache y MySQL
 dirigirse a la url:
 http://localhost/phpmyadmin/ 
-esta será nuestra base de datos(por ahora almacena login y password)
--En el login/user/pass
+esta será nuestra base de datos con el nombre de 'web'
+**configuracion de localhost/phpmyadmin**
+1.-estando dentro de la direccion http://localhost/phpmyadmin/ crear una nueva base de datos con el nombre de 'web'
+2.- dentro de esta base de datos llamada 'web'(importante que tenga este nombre) hacer click en la parte superior a 'importar'
+3.- seleccion el archivo web.sql e importalo.
 
 **EJECUTAR LA PAGINA WEB**
 IMPORTANTE: Tener activado el entorno virtual 
