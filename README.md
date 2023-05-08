@@ -23,6 +23,9 @@
 1.- ejecute 
 `$ .\env\Scripts\activate`
 
+**Si ocurre un error al iniciar el entorno virtual ejecute lo siguiente**
+`$ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
+
 **Instalacion de flask y flask-mysql**
 1.-ejecute en la terminal:
 `$ pip install flask`
